@@ -11,23 +11,38 @@
 
   <meta name="robots" content="index, follow" />
   <meta name="author" content="Luke Taylor" />
-  <meta name="theme-color" content="#171a1d" />
+  <meta name="theme-color" content="#fbfaf6" />
 
   <link rel="canonical" href="https://tailuge.github.io/" />
 
   <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_GB" />
   <meta property="og:title"
         content="Free Online Billiards Games – Three Cushion, Snooker &amp; Pool" />
   <meta property="og:description"
         content="A collection of free online billiards games with realistic physics. Play three-cushion, sagu, libre, snooker, nineball and eightball." />
   <meta property="og:url" content="https://tailuge.github.io/" />
   <meta property="og:site_name" content="Tailuge Billiards" />
+  <meta property="og:image" content="https://tailuge.github.io/og-image.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="630" />
+  <meta property="og:image:height" content="500" />
+  <meta property="og:image:alt"
+        content="Three-cushion billiards in progress on a blue carom table, with red, yellow and white balls" />
 
-  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title"
         content="Free Online Billiards Games" />
   <meta name="twitter:description"
         content="Free online billiards with realistic physics. Three cushion, sagu, libre, snooker and pool." />
+  <meta name="twitter:image" content="https://tailuge.github.io/og-image.jpg" />
+  <meta name="twitter:image:alt"
+        content="Three-cushion billiards in progress on a blue carom table, with red, yellow and white balls" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400&display=swap" />
 
   <script type="application/ld+json">
   {
@@ -38,6 +53,22 @@
     "description": "Free online billiards and pool games with realistic physics.",
     "inLanguage": "en-GB",
     "author": {
+      "@type": "Person",
+      "name": "Luke Taylor"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Tailuge Billiards",
+    "url": "https://tailuge.github.io/",
+    "sameAs": [
+      "https://github.com/tailuge/billiards"
+    ],
+    "founder": {
       "@type": "Person",
       "name": "Luke Taylor"
     }
@@ -93,86 +124,138 @@
   </script>
 
   <style>
+    :root {
+      --paper: #fbfaf6;
+      --ink: #1f1b16;
+      --ink-soft: #6c6459;
+      --baize: #1c5741;
+      --rule: #e2dcd0;
+      --underline: #b9d0c4;
+    }
+
     * {
       box-sizing: border-box;
     }
 
     body {
       margin: 0;
-      padding: 0;
-      background: #171a1d;
-      color: #dedede;
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.65;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Newsreader, Georgia, "Times New Roman", serif;
+      font-optical-sizing: auto;
+      font-size: 1.0625rem;
+      line-height: 1.72;
+      -webkit-font-smoothing: antialiased;
     }
 
     main {
-      max-width: 780px;
+      max-width: 46rem;
       margin: 0 auto;
-      padding: 48px 24px 72px;
+      padding: 4.5rem 1.5rem 5rem;
     }
 
     h1 {
-      color: #fff;
-      font-size: 2rem;
-      font-weight: 600;
-      margin: 0 0 12px;
+      margin: 0 0 0.9rem;
+      font-size: clamp(2rem, 5.5vw, 2.75rem);
+      font-weight: 500;
+      line-height: 1.12;
+      letter-spacing: -0.015em;
+      text-wrap: balance;
     }
 
     .intro {
-      color: #aaa;
-      margin-bottom: 36px;
+      max-width: 33rem;
+      margin: 0 0 3rem;
+      color: var(--ink-soft);
+      font-size: 1.125rem;
+      line-height: 1.62;
     }
 
     .game {
-      padding: 22px 0;
-      border-top: 1px solid #353a3e;
+      display: grid;
+      grid-template-columns: 10.5rem minmax(0, 1fr);
+      gap: 0 2rem;
+      padding: 1.5rem 0 1.6rem;
+      border-top: 1px solid var(--rule);
     }
 
     h2 {
-      color: #fff;
-      font-size: 1.3rem;
+      margin: 0;
+      font-size: 1.125rem;
       font-weight: 600;
-      margin: 0 0 8px;
+      line-height: 1.35;
+      letter-spacing: -0.005em;
+      text-wrap: balance;
     }
 
-    .game p {
-      margin: 0 0 12px;
-    }
-
-    :where(a) {
-      color: #8ec9a0;
-      text-decoration: none;
-    }
-
-    :where(a:hover) {
-      color: #b2edc1;
-      text-decoration: underline;
+    :where(.game p) {
+      margin: 0;
     }
 
     .play {
       font-weight: 600;
     }
 
+    :where(a) {
+      color: var(--baize);
+      text-decoration-color: var(--underline);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.16em;
+    }
+
+    :where(a:hover) {
+      text-decoration-color: var(--baize);
+    }
+
+    :where(a:focus-visible) {
+      outline: 2px solid var(--baize);
+      outline-offset: 3px;
+      border-radius: 1px;
+    }
+
+    :where(.game h2 a) {
+      color: var(--ink);
+      text-decoration-color: var(--rule);
+    }
+
+    :where(.game h2 a:hover) {
+      color: var(--baize);
+      text-decoration-color: var(--underline);
+    }
+
     footer {
-      border-top: 1px solid #353a3e;
-      margin-top: 36px;
-      padding-top: 20px;
-      color: #888;
-      font-size: 0.9rem;
+      margin-top: 2.75rem;
+      padding-top: 1.4rem;
+      border-top: 1px solid var(--rule);
+      color: var(--ink-soft);
+      font-size: 0.9375rem;
     }
 
-    footer a {
-      color: #aaa;
+    :where(footer p) {
+      margin: 0;
     }
 
-    @media (width <= 600px) {
+    :where(footer a) {
+      color: var(--ink-soft);
+    }
+
+    :where(footer a:hover) {
+      color: var(--baize);
+    }
+
+    @media (width <= 42rem) {
       main {
-        padding: 32px 20px 48px;
+        padding: 3rem 1.25rem 3.5rem;
       }
 
-      h1 {
-        font-size: 1.7rem;
+      .game {
+        grid-template-columns: 1fr;
+        gap: 0.3rem;
+        padding: 1.35rem 0 1.45rem;
+      }
+
+      .intro {
+        margin-bottom: 2.25rem;
       }
     }
   </style>
